@@ -15,7 +15,7 @@ for tag in tags:
     for e in ea.Scalars(tag):
         steps.setdefault(e.step, {'step': e.step})[tag] = e.value
 with open(out_csv, 'w', newline='') as f:
-    writer = csv.DictWriter(f, fieldnames=['step'] + tags)
+    writer = csv.DictWriter(f, fieldnames=['step'] + tags, lineterminator='\n')
     writer.writeheader()
     for s in sorted(steps):
         writer.writerow(steps[s])
