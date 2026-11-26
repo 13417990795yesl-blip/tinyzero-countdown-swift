@@ -10,10 +10,9 @@ matplotlib.use("Agg")
 from matplotlib import font_manager, pyplot as plt
 
 
-PPO = "#00668D"
-GRPO2 = "#A33D63"
-GRPO3 = "#9A6209"
-SFT = "#34785D"
+PPO = "#963626"
+GRPO2 = "#193B65"
+GRPO3 = "#007A76"
 INK = "#172836"
 
 
@@ -22,6 +21,7 @@ def config():
     candidates = (
         "Noto Sans CJK SC", "Microsoft YaHei", "Microsoft YaHei UI",
         "Noto Sans CJK JP", "SimHei", "Droid Sans Fallback",
+        "Noto Serif CJK SC", "Noto Serif CJK JP",
     )
     font = next((name for name in candidates if name in names), None)
     if font is None:
@@ -43,8 +43,9 @@ def pct(row, key):
 
 
 def series(data):
-    return ((data["ppo"], PPO, "o", "PPO"), (data["v2"], GRPO2, "s", "SFT + GRPO v2"),
-            (data["v3"], GRPO3, "^", "SFT + GRPO v3"))
+    return ((data["v2"], GRPO2, "o", "-", "SFT + GRPO v2"),
+            (data["v3"], GRPO3, "D", "-.", "SFT + GRPO v3"),
+            (data["ppo"], PPO, "s", "--", "PPO"))
 
 
 def style_axes(ax):
@@ -64,18 +65,14 @@ def save(fig, folder, name):
 
 def time_accuracy(data, folder):
     fig, ax = plt.subplots(figsize=(9.7, 4.8), layout="constrained")
-    for rows, color, marker, name in series(data):
-        start = data["base"] if name == "PPO" else data["sft"]
+    start = pct(data["base"], "correct")
+    for rows, color, marker, linestyle, name in series(data):
         x = [0] + [r["secs"] / 3600 for r in rows]
-        y = [pct(start, "correct")] + [pct(r, "correct") for r in rows]
-        for i in range(1, len(x)):
-            ax.plot(x[i-1:i+1], y[i-1:i+1], color=color, linewidth=2.0,
-                    linestyle="--" if i == 1 else "-", alpha=0.7 if i == 1 else 1)
-        ax.scatter(x[1:], y[1:], c=color, marker=marker, s=45, label=name, zorder=3)
-    ax.scatter([0, 0], [pct(data["base"], "correct"), pct(data["sft"], "correct")],
-               c=[PPO, SFT], s=45, zorder=3)
-    label(ax, 0, pct(data["base"], "correct"), "3B Instruct  23.4%", PPO, 8, -4)
-    label(ax, 0, pct(data["sft"], "correct"), "SFT  30.9%", SFT, 32, -10)
+        y = [start] + [pct(r, "correct") for r in rows]
+        ax.plot(x, y, color=color, marker=marker, markersize=5.5,
+                linewidth=2, linestyle=linestyle, label=name)
+    ax.scatter([0], [start], c=INK, s=39, zorder=4)
+    label(ax, 0, start, f"3B Instruct  {start:.1f}%", INK, 8, -4)
     for bucket, step, color, dx, dy, align in (
         ("ppo", 78, PPO, 5, 9, "left"), ("ppo", 390, PPO, -5, 10, "right"),
         ("v2", 800, GRPO2, 9, 5, "left"), ("v3", 550, GRPO3, -5, 13, "right"),
@@ -83,7 +80,7 @@ def time_accuracy(data, folder):
         r = next(row for row in data[bucket] if row["step"] == step)
         value = pct(r, "correct")
         label(ax, r["secs"]/3600, value, f"{step} 步 · {value:.1f}%", color, dx, dy, align)
-    ax.set(xlabel="累计强化学习训练耗时（小时）", ylabel="严格正确率（%）",
+    ax.set(xlabel="累计强化学习训练耗时（小时）", ylabel="验证集严格正确率（%）",
            xlim=(-0.15, 7.8), ylim=(16, 96))
     style_axes(ax)
     ax.legend(loc="lower right", ncols=3, fontsize=10, frameon=False)
@@ -92,27 +89,22 @@ def time_accuracy(data, folder):
 
 def coverage(data, folder):
     fig, ax = plt.subplots(figsize=(9.7, 4.5), layout="constrained")
-    interesting = [
-        (data["ppo"][0], PPO, "o", "PPO · 78 步", -9, 9, "right"),
-        (data["ppo"][-1], PPO, "o", "PPO · 390 步", -9, 9, "right"),
-        (next(r for r in data["v2"] if r["step"] == 800), GRPO2, "s", "v2 · 800 步", 8, 5, "left"),
-        (data["v3"][-1], GRPO3, "^", "v3 · 550 步", 8, -16, "left"),
-        (data["v3_full"], GRPO3, "^", "v3 · 全轮 1,666 步", -9, 7, "right"),
-    ]
-    ppo = data["ppo"]
-    ax.plot([r["distinct"]/1000 for r in ppo], [r["responses"]/1000 for r in ppo],
-            color=PPO, linewidth=1.8, zorder=2)
-    ax.scatter([r["distinct"]/1000 for r in ppo[1:-1]],
-               [r["responses"]/1000 for r in ppo[1:-1]], s=30, color=PPO, zorder=3)
-    for row, color, marker, text, dx, dy, align in interesting:
-        x, y = row["distinct"]/1000, row["responses"]/1000
-        ax.scatter(x, y, s=63, marker=marker,
-                   facecolors="white" if row is data["v3_full"] else color,
-                   edgecolors=color, linewidths=1.7, zorder=4)
-        label(ax, x, y, text, color, dx, dy, align, fontsize=11)
-    ax.set(xlabel="累计见过的不同题目（千道）", ylabel="累计自采样回答（千条）",
-           xlim=(0, 21.3), ylim=(0, 177))
+    for rows, color, marker, linestyle, name in series(data):
+        points = [*rows, data["v3_full"]] if name == "SFT + GRPO v3" else rows
+        x = [0] + [r["responses"]/10000 for r in points]
+        y = [0] + [r["distinct"]/10000 for r in points]
+        ax.plot(x, y, color=color, marker=marker, markersize=5.5,
+                linewidth=2, linestyle=linestyle, label=name)
+    ax.scatter([0], [0], c=INK, s=39, zorder=4)
+    ax.annotate("3B Instruct", (0, 0), xytext=(8, -2), textcoords="offset points",
+                color=INK, fontsize=10, va="top")
+    v3_end = data["v3_full"]
+    label(ax, v3_end["responses"]/10000, v3_end["distinct"]/10000,
+          "v3 · 1,666 步", GRPO3, 0, 8, "right")
+    ax.set(xlabel="累计自采样回答（万条）", ylabel="累计覆盖的不同题目（万道）",
+           xlim=(-0.15, 16.7), ylim=(-0.04, 2.16))
     style_axes(ax)
+    ax.legend(loc="lower right", ncols=3, frameon=False, fontsize=10)
     save(fig, folder, "comparison_coverage")
 
 

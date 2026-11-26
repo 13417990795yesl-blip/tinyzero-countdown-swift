@@ -1,0 +1,257 @@
+question,nums,target,instruct,sft_grpo_v2_step800,ppo_step390
+1,"[57, 5, 80, 86]",65,no_answer_tag,valid_wrong_value,no_answer_tag
+2,"[21, 7, 11, 83]",91,wrong_numbers,valid_wrong_value,correct
+3,"[6, 37, 67, 28]",82,wrong_numbers,correct,correct
+4,"[26, 35, 78]",69,wrong_numbers,correct,correct
+5,"[71, 62, 99]",90,correct,correct,correct
+6,"[45, 73, 3]",62,wrong_numbers,valid_wrong_value,correct
+7,"[39, 89, 92, 100]",42,no_answer_tag,valid_wrong_value,correct
+8,"[48, 61, 66, 81]",2,wrong_numbers,correct,no_answer_tag
+9,"[53, 81, 84, 30]",86,correct,correct,correct
+10,"[63, 60, 72, 71]",99,wrong_numbers,valid_wrong_value,no_answer_tag
+11,"[69, 14, 66, 89]",60,no_answer_tag,correct,correct
+12,"[41, 85, 74]",30,unevaluable,correct,correct
+13,"[57, 39, 82, 43]",57,valid_wrong_value,correct,correct
+14,"[48, 73, 9, 70]",54,wrong_numbers,correct,correct
+15,"[4, 41, 57]",94,wrong_numbers,correct,correct
+16,"[15, 84, 63, 40]",15,no_answer_tag,valid_wrong_value,no_answer_tag
+17,"[96, 65, 36]",5,wrong_numbers,correct,correct
+18,"[68, 16, 55, 26]",81,wrong_numbers,correct,correct
+19,"[50, 58, 13, 67]",54,wrong_numbers,correct,correct
+20,"[12, 25, 99, 13]",99,valid_wrong_value,correct,correct
+21,"[93, 76, 7]",10,no_answer_tag,correct,correct
+22,"[6, 47, 99]",46,correct,correct,correct
+23,"[64, 54, 80]",38,wrong_numbers,correct,correct
+24,"[74, 12, 14, 99]",5,no_answer_tag,valid_wrong_value,no_answer_tag
+25,"[69, 26, 30]",13,correct,correct,correct
+26,"[3, 37, 95]",16,valid_wrong_value,valid_wrong_value,correct
+27,"[65, 57, 94]",86,wrong_numbers,correct,correct
+28,"[61, 53, 85, 94]",17,wrong_numbers,correct,correct
+29,"[74, 8, 60]",6,wrong_numbers,correct,correct
+30,"[90, 43, 27, 27]",47,wrong_numbers,correct,correct
+31,"[36, 25, 56, 14]",53,wrong_numbers,correct,correct
+32,"[95, 91, 47]",43,wrong_numbers,correct,correct
+33,"[34, 30, 80, 84]",100,correct,correct,correct
+34,"[87, 34, 5, 26]",90,wrong_numbers,correct,correct
+35,"[23, 57, 20]",60,correct,correct,correct
+36,"[26, 36, 29, 70]",51,wrong_numbers,correct,correct
+37,"[13, 60, 48, 23]",2,no_answer_tag,correct,correct
+38,"[10, 68, 90, 38]",50,wrong_numbers,correct,correct
+39,"[40, 99, 14, 78]",47,no_answer_tag,valid_wrong_value,correct
+40,"[93, 88, 67, 60]",2,wrong_numbers,valid_wrong_value,correct
+41,"[61, 45, 56, 53]",54,no_answer_tag,valid_wrong_value,no_answer_tag
+42,"[83, 84, 92, 61]",32,no_answer_tag,correct,correct
+43,"[3, 33, 14, 78]",45,wrong_numbers,valid_wrong_value,no_answer_tag
+44,"[38, 56, 54]",40,wrong_numbers,correct,correct
+45,"[97, 8, 70, 30]",65,wrong_numbers,correct,correct
+46,"[20, 96, 22, 95]",3,no_answer_tag,valid_wrong_value,correct
+47,"[10, 91, 40, 81]",43,wrong_numbers,valid_wrong_value,no_answer_tag
+48,"[6, 54, 13]",35,correct,correct,correct
+49,"[94, 6, 22]",66,correct,correct,correct
+50,"[49, 77, 86]",40,wrong_numbers,correct,correct
+51,"[70, 6, 52]",12,wrong_numbers,correct,correct
+52,"[50, 51, 34, 33]",67,wrong_numbers,valid_wrong_value,no_answer_tag
+53,"[20, 39, 100]",81,no_answer_tag,correct,correct
+54,"[53, 81, 53]",81,valid_wrong_value,correct,correct
+55,"[5, 24, 50, 30]",49,wrong_numbers,correct,correct
+56,"[92, 4, 11, 85]",8,no_answer_tag,valid_wrong_value,correct
+57,"[79, 7, 8]",23,correct,valid_wrong_value,no_answer_tag
+58,"[9, 23, 69]",83,wrong_numbers,correct,correct
+59,"[46, 58, 70]",82,correct,correct,correct
+60,"[70, 35, 28, 54]",23,wrong_numbers,correct,correct
+61,"[61, 46, 9, 83]",33,wrong_numbers,correct,correct
+62,"[42, 24, 99]",81,wrong_numbers,correct,correct
+63,"[39, 55, 95]",79,correct,correct,correct
+64,"[80, 63, 69]",74,wrong_numbers,correct,correct
+65,"[7, 71, 64, 40]",88,valid_wrong_value,correct,correct
+66,"[10, 51, 33]",94,no_answer_tag,correct,correct
+67,"[93, 76, 78]",95,correct,correct,correct
+68,"[57, 72, 97, 64]",48,wrong_numbers,correct,correct
+69,"[93, 94, 46]",47,wrong_numbers,correct,correct
+70,"[22, 50, 55]",27,wrong_numbers,correct,correct
+71,"[87, 44, 52]",79,wrong_numbers,correct,correct
+72,"[65, 44, 18, 92]",89,wrong_numbers,valid_wrong_value,correct
+73,"[7, 93, 87]",42,no_answer_tag,valid_wrong_value,correct
+74,"[53, 40, 84, 10]",61,valid_wrong_value,correct,correct
+75,"[32, 61, 9]",84,correct,correct,correct
+76,"[27, 44, 61]",44,no_answer_tag,correct,correct
+77,"[17, 7, 4]",75,correct,correct,no_answer_tag
+78,"[27, 19, 31, 26]",12,wrong_numbers,valid_wrong_value,no_answer_tag
+79,"[69, 45, 37, 69]",82,wrong_numbers,correct,correct
+80,"[12, 77, 25, 12]",76,wrong_numbers,valid_wrong_value,correct
+81,"[51, 3, 38, 60]",34,wrong_numbers,valid_wrong_value,no_answer_tag
+82,"[85, 3, 36]",97,wrong_numbers,valid_wrong_value,correct
+83,"[17, 76, 58, 94]",93,valid_wrong_value,correct,correct
+84,"[38, 10, 39]",67,correct,correct,correct
+85,"[59, 27, 99]",13,wrong_numbers,correct,correct
+86,"[34, 1, 3]",38,no_answer_tag,correct,correct
+87,"[67, 32, 85, 79]",39,no_answer_tag,valid_wrong_value,no_answer_tag
+88,"[31, 5, 76]",79,wrong_numbers,valid_wrong_value,correct
+89,"[9, 89, 41, 76]",19,wrong_numbers,valid_wrong_value,correct
+90,"[99, 45, 77]",23,no_answer_tag,correct,correct
+91,"[28, 80, 93, 94]",53,valid_wrong_value,correct,correct
+92,"[42, 84, 36, 70]",39,wrong_numbers,valid_wrong_value,no_answer_tag
+93,"[29, 9, 52]",32,correct,correct,correct
+94,"[16, 60, 98, 49]",93,wrong_numbers,correct,correct
+95,"[3, 30, 62, 19]",76,wrong_numbers,correct,correct
+96,"[75, 26, 45]",94,wrong_numbers,correct,correct
+97,"[74, 1, 40, 11]",23,no_answer_tag,valid_wrong_value,no_answer_tag
+98,"[82, 55, 43, 40]",3,wrong_numbers,valid_wrong_value,no_answer_tag
+99,"[100, 70, 97, 75]",52,no_answer_tag,correct,correct
+100,"[52, 96, 33]",11,wrong_numbers,correct,correct
+101,"[95, 66, 96]",67,wrong_numbers,correct,correct
+102,"[32, 18, 57]",7,wrong_numbers,correct,correct
+103,"[30, 40, 46]",56,wrong_numbers,correct,correct
+104,"[20, 95, 18, 99]",42,wrong_numbers,correct,correct
+105,"[9, 63, 52, 63]",61,wrong_numbers,correct,correct
+106,"[42, 6, 95, 41]",6,no_answer_tag,correct,correct
+107,"[62, 19, 53]",28,correct,correct,correct
+108,"[80, 96, 74, 75]",15,wrong_numbers,correct,correct
+109,"[10, 27, 81, 94]",81,wrong_numbers,valid_wrong_value,no_answer_tag
+110,"[86, 6, 58, 58]",81,no_answer_tag,valid_wrong_value,no_answer_tag
+111,"[70, 81, 8]",88,wrong_numbers,valid_wrong_value,correct
+112,"[41, 89, 69, 6]",27,wrong_numbers,correct,correct
+113,"[30, 45, 48, 100]",67,no_answer_tag,correct,correct
+114,"[31, 56, 73]",98,correct,correct,correct
+115,"[39, 100, 50, 22]",50,valid_wrong_value,valid_wrong_value,no_answer_tag
+116,"[62, 60, 8]",6,wrong_numbers,correct,correct
+117,"[36, 24, 68]",56,wrong_numbers,correct,correct
+118,"[35, 37, 71, 60]",60,no_answer_tag,valid_wrong_value,no_answer_tag
+119,"[59, 98, 65]",26,wrong_numbers,correct,correct
+120,"[92, 81, 32]",21,wrong_numbers,correct,correct
+121,"[82, 59, 40]",63,correct,correct,correct
+122,"[48, 97, 29, 57]",21,no_answer_tag,correct,correct
+123,"[21, 22, 94, 69]",18,wrong_numbers,correct,correct
+124,"[67, 37, 41, 43]",28,wrong_numbers,correct,correct
+125,"[84, 28, 1]",3,unevaluable,valid_wrong_value,correct
+126,"[40, 41, 96, 15]",1,wrong_numbers,unevaluable,no_answer_tag
+127,"[59, 73, 99, 72]",41,wrong_numbers,correct,correct
+128,"[6, 84, 56, 72]",63,no_answer_tag,valid_wrong_value,no_answer_tag
+129,"[62, 28, 33]",67,correct,correct,correct
+130,"[74, 13, 11]",69,wrong_numbers,valid_wrong_value,correct
+131,"[31, 24, 45, 12]",64,wrong_numbers,correct,correct
+132,"[34, 23, 58, 93]",94,valid_wrong_value,correct,correct
+133,"[11, 70, 85, 87]",22,wrong_numbers,valid_wrong_value,no_answer_tag
+134,"[6, 55, 1, 21]",83,wrong_numbers,correct,no_answer_tag
+135,"[44, 1, 16]",60,wrong_numbers,valid_wrong_value,correct
+136,"[83, 80, 29, 86]",9,wrong_numbers,valid_wrong_value,no_answer_tag
+137,"[2, 14, 96, 36]",4,no_answer_tag,valid_wrong_value,no_answer_tag
+138,"[6, 52, 90, 96]",59,wrong_numbers,valid_wrong_value,no_answer_tag
+139,"[61, 88, 32]",59,no_answer_tag,correct,correct
+140,"[55, 65, 22, 15]",27,no_answer_tag,correct,correct
+141,"[39, 45, 29]",55,correct,correct,correct
+142,"[53, 33, 90, 62]",66,wrong_numbers,correct,correct
+143,"[44, 40, 99]",95,correct,correct,correct
+144,"[94, 3, 62]",29,correct,correct,correct
+145,"[67, 23, 24]",66,correct,correct,correct
+146,"[27, 31, 56]",52,correct,correct,correct
+147,"[60, 60, 75, 17]",57,wrong_numbers,valid_wrong_value,no_answer_tag
+148,"[1, 48, 28, 89]",14,correct,correct,correct
+149,"[35, 31, 2]",2,correct,correct,correct
+150,"[5, 73, 25, 66]",90,wrong_numbers,valid_wrong_value,no_answer_tag
+151,"[8, 96, 12, 53]",91,wrong_numbers,valid_wrong_value,no_answer_tag
+152,"[64, 84, 76]",72,wrong_numbers,correct,correct
+153,"[16, 61, 63, 51]",70,wrong_numbers,valid_wrong_value,no_answer_tag
+154,"[18, 70, 66, 89]",75,wrong_numbers,correct,correct
+155,"[46, 19, 97]",70,no_answer_tag,correct,correct
+156,"[50, 79, 98, 27]",4,wrong_numbers,correct,correct
+157,"[28, 78, 58, 47]",61,wrong_numbers,correct,correct
+158,"[71, 21, 59, 75]",34,no_answer_tag,valid_wrong_value,correct
+159,"[86, 52, 16]",50,valid_wrong_value,correct,correct
+160,"[12, 2, 68, 99]",61,no_answer_tag,valid_wrong_value,no_answer_tag
+161,"[93, 38, 26]",81,correct,correct,correct
+162,"[32, 38, 10]",7,no_answer_tag,valid_wrong_value,correct
+163,"[25, 73, 35, 27]",36,wrong_numbers,correct,correct
+164,"[96, 69, 65, 35]",57,correct,correct,correct
+165,"[18, 16, 13, 4]",18,unevaluable,valid_wrong_value,no_answer_tag
+166,"[88, 70, 59]",77,correct,correct,correct
+167,"[53, 95, 68, 24]",56,correct,correct,correct
+168,"[73, 88, 54, 6]",33,no_answer_tag,valid_wrong_value,valid_wrong_value
+169,"[65, 36, 25]",54,correct,correct,correct
+170,"[33, 95, 15]",77,valid_wrong_value,correct,correct
+171,"[15, 50, 74]",39,correct,correct,correct
+172,"[91, 15, 2, 23]",60,no_answer_tag,valid_wrong_value,no_answer_tag
+173,"[55, 90, 8]",27,correct,correct,correct
+174,"[28, 4, 70]",46,no_answer_tag,correct,correct
+175,"[4, 35, 94, 91]",34,wrong_numbers,correct,correct
+176,"[85, 13, 94, 76]",98,wrong_numbers,correct,correct
+177,"[99, 51, 87, 40]",95,correct,correct,correct
+178,"[98, 38, 96]",40,correct,correct,correct
+179,"[95, 97, 49]",47,wrong_numbers,valid_wrong_value,correct
+180,"[80, 99, 56, 13]",40,wrong_numbers,valid_wrong_value,no_answer_tag
+181,"[17, 10, 29]",36,wrong_numbers,correct,correct
+182,"[25, 16, 74]",33,wrong_numbers,correct,correct
+183,"[96, 35, 77, 50]",66,wrong_numbers,correct,correct
+184,"[84, 6, 30]",89,no_answer_tag,valid_wrong_value,correct
+185,"[87, 29, 77, 91]",44,wrong_numbers,correct,correct
+186,"[41, 80, 64, 96]",89,wrong_numbers,correct,correct
+187,"[88, 10, 90]",97,no_answer_tag,valid_wrong_value,no_answer_tag
+188,"[94, 78, 71, 13]",100,wrong_numbers,correct,correct
+189,"[18, 91, 10, 19]",64,wrong_numbers,correct,correct
+190,"[56, 81, 90, 48]",67,wrong_numbers,correct,correct
+191,"[91, 83, 60, 24]",90,no_answer_tag,correct,correct
+192,"[8, 88, 65]",15,no_answer_tag,correct,correct
+193,"[69, 19, 49, 99]",98,valid_wrong_value,valid_wrong_value,correct
+194,"[91, 85, 100]",94,wrong_numbers,correct,correct
+195,"[29, 88, 54, 72]",67,wrong_numbers,correct,correct
+196,"[82, 84, 80, 69]",13,correct,correct,correct
+197,"[77, 56, 96, 14]",51,wrong_numbers,correct,correct
+198,"[3, 81, 52, 100]",75,wrong_numbers,valid_wrong_value,no_answer_tag
+199,"[96, 20, 90, 53]",67,wrong_numbers,correct,correct
+200,"[96, 24, 58, 5]",57,correct,correct,correct
+201,"[8, 6, 75]",73,correct,correct,correct
+202,"[35, 8, 13]",56,valid_wrong_value,correct,correct
+203,"[69, 6, 62, 97]",28,wrong_numbers,correct,no_answer_tag
+204,"[5, 22, 68]",85,wrong_numbers,correct,correct
+205,"[97, 54, 37, 72]",78,valid_wrong_value,correct,correct
+206,"[45, 62, 42]",25,wrong_numbers,correct,correct
+207,"[52, 88, 1, 26]",63,no_answer_tag,valid_wrong_value,correct
+208,"[9, 80, 6, 62]",21,wrong_numbers,correct,correct
+209,"[28, 8, 19, 71]",88,wrong_numbers,correct,correct
+210,"[88, 15, 5, 73]",5,wrong_numbers,correct,correct
+211,"[17, 66, 74]",9,correct,correct,correct
+212,"[45, 87, 73]",31,no_answer_tag,correct,correct
+213,"[44, 11, 70, 68]",31,correct,correct,correct
+214,"[17, 61, 90]",46,correct,correct,correct
+215,"[34, 94, 67, 66]",61,correct,correct,correct
+216,"[19, 59, 30]",48,correct,correct,correct
+217,"[6, 80, 52]",22,correct,correct,correct
+218,"[66, 23, 29]",72,valid_wrong_value,correct,correct
+219,"[98, 10, 58, 90]",76,valid_wrong_value,correct,correct
+220,"[97, 18, 99, 22]",42,wrong_numbers,correct,correct
+221,"[3, 81, 70]",14,wrong_numbers,correct,correct
+222,"[2, 71, 88]",54,wrong_numbers,valid_wrong_value,no_answer_tag
+223,"[51, 11, 85, 25]",20,wrong_numbers,correct,correct
+224,"[53, 59, 49, 85]",42,no_answer_tag,correct,correct
+225,"[38, 31, 11, 26]",44,correct,correct,correct
+226,"[63, 47, 45, 14]",43,wrong_numbers,correct,correct
+227,"[73, 52, 79, 41]",17,wrong_numbers,correct,correct
+228,"[18, 24, 36]",30,correct,correct,correct
+229,"[72, 61, 83]",2,no_answer_tag,valid_wrong_value,correct
+230,"[88, 55, 83, 58]",58,unevaluable,correct,correct
+231,"[88, 91, 70]",67,wrong_numbers,correct,correct
+232,"[87, 15, 84]",12,no_answer_tag,correct,correct
+233,"[29, 72, 88]",13,wrong_numbers,correct,correct
+234,"[23, 74, 95, 62]",64,no_answer_tag,correct,correct
+235,"[20, 82, 37, 24]",1,wrong_numbers,correct,correct
+236,"[72, 3, 28, 87]",16,wrong_numbers,correct,correct
+237,"[60, 37, 16]",81,no_answer_tag,correct,correct
+238,"[30, 72, 21]",21,wrong_numbers,correct,correct
+239,"[60, 71, 50, 41]",80,no_answer_tag,correct,correct
+240,"[85, 54, 67, 43]",55,no_answer_tag,correct,correct
+241,"[37, 74, 85]",26,wrong_numbers,correct,correct
+242,"[86, 10, 93]",3,no_answer_tag,correct,correct
+243,"[45, 21, 25, 60]",30,wrong_numbers,valid_wrong_value,no_answer_tag
+244,"[36, 71, 35]",1,unevaluable,valid_wrong_value,correct
+245,"[90, 51, 83]",58,wrong_numbers,correct,correct
+246,"[21, 93, 79, 64]",99,wrong_numbers,valid_wrong_value,correct
+247,"[45, 66, 17, 57]",37,wrong_numbers,correct,correct
+248,"[99, 36, 22]",41,wrong_numbers,correct,correct
+249,"[95, 8, 89]",2,no_answer_tag,correct,correct
+250,"[54, 57, 27]",30,wrong_numbers,correct,correct
+251,"[99, 16, 100, 48]",64,wrong_numbers,valid_wrong_value,no_answer_tag
+252,"[98, 10, 71, 50]",13,wrong_numbers,correct,correct
+253,"[38, 39, 52]",51,wrong_numbers,correct,correct
+254,"[11, 98, 4]",91,wrong_numbers,correct,correct
+255,"[37, 6, 79, 4]",52,correct,correct,correct
+256,"[12, 41, 9, 89]",69,wrong_numbers,correct,correct

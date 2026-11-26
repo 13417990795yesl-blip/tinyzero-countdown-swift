@@ -18,6 +18,24 @@ for split, count, seed in (("train", 20000, 42), ("test", 256, 7)):
             out.write(json.dumps(row, ensure_ascii=False) + "\n")
 ```
 
+## 独立测试与评测脚本
+
+使用固定种子 20261126 生成候选题，跳过训练集、原验证集和已接受测试题中的重复项。查重键由排序后保留重复数字的列表和目标值组成。原脚本生成的 `data/countdown_test.jsonl` 是历史验证集。以下命令在仓库根目录运行。
+
+```bash
+python -m scripts.build_holdout \
+  --train data/countdown_train.jsonl \
+  --validation data/countdown_test.jsonl \
+  --output /tmp/countdown_holdout_256_seed20261126.jsonl
+
+python -m scripts.evaluate_holdout \
+  --model /path/to/exported-hf-model \
+  --dataset data/countdown_holdout_256_seed20261126.jsonl \
+  --output-prefix /tmp/countdown_eval
+```
+
+将重新生成的文件与仓库中的[独立测试集](../data/countdown_holdout_256_seed20261126.jsonl)核对即可验证复现结果。评测脚本在已有 ms-swift、Transformers、PyTorch 和 CUDA 的环境运行，读取可直接由 Transformers 加载的模型目录。GRPO 和 PPO 分别使用已合并 LoRA 和已导出为 Hugging Face 格式的最佳验证检查点。模型、数据和输出位置均可通过命令行指定。[检查点与结果](holdout.md)
+
 ## 早期 1.5B GRPO 基线
 
 [run_1p5b_grpo.sh](../scripts/run_1p5b_grpo.sh) 保存了第一版 200 步基线的训练配置。运行前按实际机器替换脚本中的工作目录、Python 环境、模型、数据和插件路径，并按 GPU 数量同步调整 `CUDA_VISIBLE_DEVICES` 与 `NPROC_PER_NODE`。

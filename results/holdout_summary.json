@@ -1,0 +1,81 @@
+{
+  "dataset": "data/countdown_holdout_256_seed20261126.jsonl",
+  "sha256": "cf4c45560f3b9a73df96263c84e5ec79ed5a687439f507e8c06c064ae8614368",
+  "n": 256,
+  "seed": 20261126,
+  "overlap_with_train": 0,
+  "overlap_with_validation": 0,
+  "duplicate_test_items": 0,
+  "evaluation": {
+    "backend": "Transformers",
+    "do_sample": false,
+    "max_new_tokens": 1024,
+    "batch_size": 32
+  },
+  "models": {
+    "instruct": {
+      "step": null,
+      "n": 256,
+      "correct_split_eq": 0.203125,
+      "correct_strict": 0.1875,
+      "categories_split_eq": {
+        "no_answer_tag": 0.203125,
+        "wrong_numbers": 0.484375,
+        "correct": 0.203125,
+        "unevaluable": 0.0234375,
+        "valid_wrong_value": 0.0859375
+      },
+      "categories_strict": {
+        "no_answer_tag": 0.203125,
+        "wrong_numbers": 0.5234375,
+        "correct": 0.1875,
+        "unevaluable": 0.01953125,
+        "valid_wrong_value": 0.06640625
+      },
+      "mean_completion_tokens": 577.4453125,
+      "truncated_at_1024": 0.203125
+    },
+    "sft_grpo_v2_step800": {
+      "step": 800,
+      "n": 256,
+      "correct_split_eq": 0.7421875,
+      "correct_strict": 0.7421875,
+      "categories_split_eq": {
+        "valid_wrong_value": 0.25390625,
+        "correct": 0.7421875,
+        "unevaluable": 0.00390625
+      },
+      "categories_strict": {
+        "valid_wrong_value": 0.25390625,
+        "correct": 0.7421875,
+        "unevaluable": 0.00390625
+      },
+      "mean_completion_tokens": 385.37109375,
+      "truncated_at_1024": 0.0078125
+    },
+    "ppo_step390": {
+      "step": 390,
+      "n": 256,
+      "correct_split_eq": 0.83203125,
+      "correct_strict": 0.83203125,
+      "categories_split_eq": {
+        "no_answer_tag": 0.1640625,
+        "correct": 0.83203125,
+        "valid_wrong_value": 0.00390625
+      },
+      "categories_strict": {
+        "no_answer_tag": 0.1640625,
+        "correct": 0.83203125,
+        "valid_wrong_value": 0.00390625
+      },
+      "mean_completion_tokens": 405.70703125,
+      "truncated_at_1024": 0.1640625
+    }
+  },
+  "grpo_ppo_paired": {
+    "both_correct": 186,
+    "only_grpo_correct": 4,
+    "only_ppo_correct": 27,
+    "neither_correct": 39
+  }
+}
